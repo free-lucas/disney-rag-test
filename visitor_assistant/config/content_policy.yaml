@@ -1,0 +1,88 @@
+version: 1
+default_audience: internal
+default_index: true
+
+# Rules are evaluated in order. The first matching rule wins.
+rules:
+  - id: navigation-only
+    match: '迪士尼RAG知识库.docx'
+    match_type: path
+    audience: internal
+    index: false
+    reason: '顶层文件仅用于导航，不作为事实来源'
+
+  - id: internal-tools-folder
+    match: '5-内部知识与工具/'
+    match_type: prefix
+    audience: internal
+    index: true
+    reason: '内部知识与员工工具不对游客开放'
+
+  - id: support-tone-only
+    match: '4-客户关系与支持话术/'
+    match_type: prefix
+    audience: internal
+    index: false
+    reason: '仅作为回答语气参考，不参与检索'
+
+  - id: emergency-public
+    match: '3-特殊情况与应急预案/迪士尼乐园「紧急情况处理」一站式速查表.docx'
+    match_type: path
+    audience: public
+    index: true
+    reason: '游客安全指引公开，内部联系方式需脱敏'
+
+  - id: emergency-default
+    match: '3-特殊情况与应急预案/'
+    match_type: prefix
+    audience: internal
+    index: true
+    reason: '应急预案默认内部使用'
+
+  - id: operations-hotel-public
+    match: '迪士尼乐园酒店信息'
+    match_type: contains
+    audience: public
+    index: true
+    reason: '酒店房型、设施与入住政策属于游客公开信息'
+
+  - id: operations-booking-public
+    match: '迪士尼官网订票'
+    match_type: contains
+    audience: public
+    index: true
+    reason: '官方订票指引属于游客公开信息'
+
+  - id: operations-internal
+    match: '2-运营流程与标准作业程序/'
+    match_type: prefix
+    audience: internal
+    index: true
+    reason: '客诉、升级与 CRM 流程仅供内部使用'
+
+  - id: products-public
+    match: '1-产品与服务详情/'
+    match_type: prefix
+    audience: public
+    index: true
+    reason: '产品、票务、项目、餐饮与邮轮信息对游客公开'
+
+redaction_rules:
+  - type: internal_phone
+    pattern: '(?m)(?:内部电话|值班电话|内线|分机|员工热线)[：: ]*[^\n]{0,40}'
+    replacement: '内部联系方式已隐藏'
+  - type: internal_extension
+    pattern: '(?:转|分机)[：: ]*\d{1,4}'
+    replacement: '转接信息已隐藏'
+  - type: responsible_person
+    pattern: '(?m)(?:责任人|负责人|值班经理|内部联系人)[：: ]*[^\n，。；]{0,30}'
+    replacement: '内部责任人信息已隐藏'
+  - type: escalation_path
+    pattern: '(?m)^.*(?:升级路径|上报路径|升级至|逐级上报|内部转交).*$'
+    replacement: ''
+  - type: staff_contact
+    pattern: '(?m)(?:员工联系方式|内部通讯录|企业微信|钉钉群|工号)[：: ]*[^\n]{0,40}'
+    replacement: '员工联系方式已隐藏'
+  - type: internal_procedure
+    pattern: '(?m)^.*(?:内部流程|仅限员工|员工专用|内部规定).*$'
+    replacement: ''

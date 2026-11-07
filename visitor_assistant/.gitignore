@@ -1,0 +1,9 @@
+.env
+__pycache__/
+*.py[cod]
+.pytest_cache/
+data/index/
+data/cache/
+data/reports/
+data/tmp/
+!data/.gitkeep

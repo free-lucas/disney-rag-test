@@ -1,0 +1,17 @@
+# 文本文件统一按 LF 入库，避免跨平台换行差异
+* text=auto eol=lf
+
+# 知识库文档为二进制容器，禁止任何换行转换
+*.doc  binary
+*.docx binary
+*.ppt  binary
+*.pptx binary
+*.pdf  binary
+*.jpeg binary
+*.jpg  binary
+*.png  binary
+*.gif  binary
+*.zip  binary
+*.pkl  binary
+*.npy  binary
+*.index binary

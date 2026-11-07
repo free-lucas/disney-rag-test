@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "questions": [
+    {
+      "id": "ticket-001",
+      "category": "ticket",
+      "question": "上海迪士尼乐园一日票多少钱？",
+      "expected_source_files": [
+        "1-产品与服务详情/迪士尼乐园门票价格一览，官方渠道购票攻略.docx"
+      ],
+      "expect_refusal": false
+    },
+    {
+      "id": "ticket-002",
+      "category": "ticket",
+      "question": "迪士尼乐园年票怎么使用，有哪些使用规则？",
+      "expected_source_files": [
+        "1-产品与服务详情/迪士尼乐园年票使用规则.docx"
+      ],
+      "expect_refusal": false
+    },
+    {
+      "id": "attraction-001",
+      "category": "attraction",
+      "question": "迪士尼乐园有哪些适合小朋友的游玩项目？",
+      "expected_source_files": [
+        "1-产品与服务详情/上海迪士尼适合小朋友的游玩项目.docx"
+      ],
+      "expect_refusal": false
+    },
+    {
+      "id": "attraction-002",
+      "category": "attraction",
+      "question": "乐园游乐设施对身高和年龄有什么限制？",
+      "expected_source_files": [
+        "1-产品与服务详情/乐园与度假区设施信息：各项游乐设施的身高_年龄限制、安全须知、排队时间的官方查询方式.docx"
+      ],
+      "expect_refusal": false
+    },
+    {
+      "id": "attraction-003",
+      "category": "attraction",
+      "question": "迪士尼乐园最刺激的游乐项目是哪些？",
+      "expected_source_files": [
+        "1-产品与服务详情/迪士尼乐园最刺激的游乐项目是哪些.docx"
+      ],
+      "expect_refusal": false
+    },
+    {
+      "id": "hotel-001",
+      "category": "hotel",
+      "question": "迪士尼乐园酒店有哪些房型、设施和入住政策？",
+      "expected_source_files": [
+        "2-运营流程与标准作业程序/迪士尼乐园酒店信息"
+      ],
+      "expect_refusal": false
+    },
+    {
+      "id": "hotel-002",
+      "category": "hotel",
+      "question": "上海迪士尼乐园酒店会员制度有哪些会员福利？",
+      "expected_source_files": [
+        "1-产品与服务详情/上海迪士尼乐园酒店会员制度.docx"
+      ],
+      "expect_refusal": false
+    },
+    {
+      "id": "dining-001",
+      "category": "dining",
+      "question": "迪士尼乐园有哪些餐饮选择？",
+      "expected_source_files": [
+        "1-产品与服务详情/迪士尼乐园餐饮信息.docx"
+      ],
+      "expect_refusal": false
+    },
+    {
+      "id": "emergency-001",
+      "category": "emergency",
+      "question": "在乐园遇到紧急情况应该怎么办？",
+      "expected_source_files": [
+        "3-特殊情况与应急预案/迪士尼乐园「紧急情况处理」一站式速查表.docx"
+      ],
+      "expect_refusal": false
+    },
+    {
+      "id": "cruise-001",
+      "category": "cruise",
+      "question": "迪士尼邮轮有哪些航线和船上活动？",
+      "expected_source_files": [
+        "1-产品与服务详情/迪士尼邮轮信息包括航线与行程、船只介绍、预定与政策、船上活动的详细介绍.docx"
+      ],
+      "expect_refusal": false
+    },
+    {
+      "id": "cruise-002",
+      "category": "cruise",
+      "question": "迪士尼邮轮内舱价格是多少？",
+      "expected_source_files": [
+        "1-产品与服务详情/迪士尼邮轮价格"
+      ],
+      "expect_refusal": false
+    },
+    {
+      "id": "out-001",
+      "category": "out_of_domain",
+      "question": "今天上海天气怎么样？",
+      "expected_source_files": [],
+      "expect_refusal": true
+    },
+    {
+      "id": "out-002",
+      "category": "out_of_domain",
+      "question": "北京有哪些值得去的旅游景点？",
+      "expected_source_files": [],
+      "expect_refusal": true
+    }
+  ]
+}

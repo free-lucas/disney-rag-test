@@ -1,0 +1,79 @@
+# ==========================================================
+# 迪士尼游客 RAG 助手 —— 只提交源码与知识库文档
+# 真实密钥、虚拟环境、索引/缓存/报告等建库产物一律不上传
+# ==========================================================
+
+# ---------- 密钥与本地配置（务必不要提交） ----------
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+*.pem
+*.key
+secrets.*
+credentials.*
+
+# ---------- Python 虚拟环境 ----------
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# ---------- Python 缓存与构建产物 ----------
+__pycache__/
+*.py[cod]
+*.pyo
+*$py.class
+*.so
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# ---------- 测试与检查工具缓存 ----------
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+.cache/
+.ipynb_checkpoints/
+
+# ---------- 建库/检索运行产物（可由知识库重新生成） ----------
+visitor_assistant/data/index/
+visitor_assistant/data/cache/
+visitor_assistant/data/reports/
+visitor_assistant/data/tmp/
+visitor_assistant/data/assets/
+visitor_assistant/data/*.log
+visitor_assistant/data/*.pkl
+
+# ---------- 日志与临时文件 ----------
+*.log
+debug-paste.log
+*.tmp
+*.bak
+~$*
+
+# ---------- 系统与编辑器 ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*~
+
+# ---------- 根目录早期实验脚本（不属于 visitor_assistant 源码） ----------
+/1-文本embedding.*
+/2-图片embedding.*
+/3-视频embedding.*
+/4-disney_build_index.py
+/5-disney_query.py
+/5-disney_query_logic.html
+/requirements.txt
